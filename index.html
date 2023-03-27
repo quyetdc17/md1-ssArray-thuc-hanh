@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD – STUDENT MANAGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>
+    <p id="output" style="color: red"></p>
+    <input id="inputName" type="text" placeholder="The Name Student...">
+    <button type="button" style="background-color: #79b918" onclick="createStudent()">Create</button>
+    <br>
+    <input id="inputSearch" type="text" placeholder="Search Student...">
+    <button style="background-color: #35b8bd" id="Search" onclick="showListStudent()">Search</button>
+    <br>
+    <table border="1" width="98%" id="table">
+        <tr>
+            <th colspan="4">STUDENT MANAGE</th>
+        </tr>
+        <tr>
+            <td>STT</td>
+            <td>NAME</td>
+            <td>EDIT</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>STT</td>
+            <td>NAME</td>
+            <td>
+                <button class="edit" onclick="updateStudent()">Edit</button>
+            </td>
+            <td>
+                <button class="delete" onclick="deleteStudent()">DELETE</button>
+            </td>
+        </tr>
+        <tr>
+            <td>STT</td>
+            <td>NAME</td>
+            <td>
+                <button class="edit" onclick="updateStudent()">Edit</button>
+            </td>
+            <td>
+                <button class="delete" onclick="deleteStudent()">DELETE</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    let inputStudent = document.getElementById("inputName").value
+
+    let inputSearch = document.getElementById("inputSearch").value
+    let studentName = ["Ngan","Men",]
+    let stt = 1;
+
+    function createStudent() {
+        // studentName +=  studentName.push(inputStudent)
+        // console.log(studentName)
+        if (inputStudent == "") {
+
+            document.getElementById("output").innerHTML = "The name is required! Please try again!";
+        }
+        // if (inputStudent == true)
+        else {
+            document.getElementById("output").innerHTML = " Create Student Success! "
+            let x=document.getElementById('Table').insertRow(0);
+            let a = x.insertCell(0);
+            let b = x.insertCell(1);
+            let c = x.insertCell(2);
+            let d = x.insertCell(3);
+
+            // document.getElementById('table').innerHTML += "<tr>"+
+            //     "<td>STT</td>"+
+            //     "<td>"+inputStudent+"</td>"+
+            //     "<td>"+
+            //         "<button className="edit" onClick="edit()">"+"Edit</button>"
+            //     </td>
+            //     <td>
+            //         <button className="delete" onClick="delete()">DELETE</button>
+            //     </td>
+            // </tr>; "
+        }
+    }
+    console.log(inputStudent)
+    function showListStudent() {
+        document.getElementById("output").innerHTML = " Create Student Success! "
+
+    }
+    function updateStudent(){
+
+        document.getElementById("output").innerHTML = " The name is required! Please try again! "
+        document.getElementById("output").innerHTML = " The name is existed! Please try again! "
+
+    }
+    function deleteStudent(){
+        if(cancel){
+            document.getElementById("output").innerHTML = " Just Don't delete it! "
+        }
+        if (ok){
+            document.getElementById("output").innerHTML = " Delete Student success! "
+        }
+    }
+</script>
+</body>
+</html>
